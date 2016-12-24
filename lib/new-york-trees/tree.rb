@@ -13,4 +13,8 @@ class NewYorkTrees::Tree
     @scientific_name = scientific_name
     @@all << self
   end
+
+  def self.all
+    @@all
+  end
 end
