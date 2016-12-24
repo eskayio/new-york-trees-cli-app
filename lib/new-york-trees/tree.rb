@@ -5,8 +5,12 @@ class NewYorkTrees::Tree
 
   @@all = []
 
-  self.make_from_index(t)
+  self.make_from_index_page(t)
     # add class constructor here -- taking input from scraper.rb #make_trees method
+    self.new(
+    name = t.css('a').text,
+    scientific_name = t.css('em').text
+    )
   end
 
   def initialize(name=nil,scientific_name=nil)
