@@ -20,17 +20,17 @@ class NewYorkTrees::CLI
 
     @array_pos = number_from_user - 1
 
-    puts "#{@array_pos}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 1}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 2}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 3}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 4}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 5}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 6}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 7}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 8}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-    puts "#{@array_pos + 9}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
-
+    puts "#{number_from_user}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 1}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 2}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 3}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 4}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 5}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 6}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 7}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 8}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts "#{number_from_user + 9}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[@array_pos].scientific_name})"
+    puts ""
     puts "Enter the number of the tree you'd like to learn more about: "
     id = gets.strip.to_int
     print_tree(id - 1)
