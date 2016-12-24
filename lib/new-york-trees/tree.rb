@@ -4,7 +4,7 @@ class NewYorkTrees::Tree
 
   @@all = []
 
-  self.make_from_index_page(t)
+  def self.make_from_index_page(t)
     self.new(t.css("a").text,t.css("em").text)
   end
 
@@ -13,5 +13,4 @@ class NewYorkTrees::Tree
     @scientific_name = scientific_name
     @@all << self
   end
-
 end
