@@ -1,6 +1,6 @@
 class NewYorkTrees::CLI
   def call
-    NewYorkTrees::Scraper.new.new_from_index_page(t)
+    NewYorkTrees::Scraper.new.make_trees
     puts "Welcome to the New York Forest tree collection!"
     start
   end
