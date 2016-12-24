@@ -29,7 +29,7 @@ class NewYorkTrees::Tree
   end
 
   def bark
-    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()")
+    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()").text
   end
 
   def twigs

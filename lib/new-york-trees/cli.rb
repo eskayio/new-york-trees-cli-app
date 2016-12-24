@@ -11,7 +11,13 @@ class NewYorkTrees::CLI
 
     print_trees(input)
 
-    puts "Which tree would you like to learn more about? (enter a number)"
+    puts "Would you like to learn about another tree? (Y/N)"
+    answer = gets.strip
+    if answer == "Y" || "y"
+      start
+    else
+      puts "Thanks for using the New York Forests Tree browser!"
+    end
   end
 
   def print_trees(number_from_user)
@@ -49,6 +55,7 @@ class NewYorkTrees::CLI
     puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[@array_pos].distinguishing_features}"
 
     puts "---------------------Description---------------------"
+    puts ""
     puts "Description:  #{NewYorkTrees::Tree.all[@array_pos].description}"
   end
 
