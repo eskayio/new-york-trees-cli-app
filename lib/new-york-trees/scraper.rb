@@ -1,10 +1,11 @@
 class NewYorkTrees::Scraper
   def get_index
-
+    Nokogiri::HTML(open("http://bhort.bh.cornell.edu/tree/list.htm"))
   end
 
   def trees_from_index
     #returns trees list as Nokogiri nodeset of tree html nodes
+
   end
 
   def make_trees
