@@ -1,17 +1,14 @@
-require 'nokogiri'
-require 'pry'
-require 'open-uri'
+#require 'nokogiri'
+#require 'pry'
+#require 'open-uri'
 
-#NewYorkTrees::
-
-class Scraper
+class NewYorkTrees::Scraper
   def get_page
     Nokogiri::HTML(open("http://bhort.bh.cornell.edu/tree/list.htm"))
   end
 
   def scrape_trees_index
     self.get_page.css('li')
-    binding.pry
   end
 
   def make_trees
@@ -21,4 +18,4 @@ class Scraper
   end
 end
 
-Scraper.new.scrape_trees_index
+#Scraper.new.scrape_trees_index

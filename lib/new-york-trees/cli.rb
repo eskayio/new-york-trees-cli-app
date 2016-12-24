@@ -32,12 +32,12 @@ class NewYorkTrees::CLI
     puts "#{number_from_user + 9}.  #{NewYorkTrees::Tree.all[@array_pos + 9].name} (#{NewYorkTrees::Tree.all[@array_pos + 9].scientific_name})"
     puts ""
     puts "Enter the number of the tree you'd like to learn more about: "
-    id = gets.strip.to_int
+    id = gets.strip.to_i
     print_tree(id - 1)
   end
 
   def print_tree(id)
-    puts "---------------------Trees #{NewYorkTrees::Tree.all[@array_pos].name} - #{input + 9}---------------------"
+    puts "--------------------- Tree Record: #{NewYorkTrees::Tree.all[@array_pos].name} ---------------------"
     puts ""
     puts "Common Name:                #{NewYorkTrees::Tree.all[@array_pos].name}"
     puts "Scientific Name:            #{NewYorkTrees::Tree.all[@array_pos].scientific_name}"

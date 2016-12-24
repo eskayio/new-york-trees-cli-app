@@ -5,7 +5,8 @@ class NewYorkTrees::Tree
   @@all = []
 
   def self.make_from_index_page(t)
-    self.new(t.css("a").text,t.css("em").text,"http://bhort.bh.cornell.edu/tree/#{t.css('li a')[0].attr("href")}")
+    #binding.pry
+    self.new(t.css("a").text,t.css("em").text,"http://bhort.bh.cornell.edu/tree/#{t.css("a").attr("href").text}")
   end
 
   def initialize(name=nil,scientific_name=nil,url=nil)
@@ -28,11 +29,11 @@ class NewYorkTrees::Tree
   end
 
   def bark
-    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()").capitalize
+    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()")
   end
 
   def twigs
-    @twigs ||= doc.xpath("/html/body/table[3]/tbody/tr/td/p[1]/font/text()").capitalize
+    @twigs ||= doc.xpath("/html/body/table[3]/tbody/tr/td/p[1]/font/text()")
   end
 
   def winter_buds
