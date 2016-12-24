@@ -25,7 +25,7 @@ class NewYorkTrees::Tree
   end
 
   def description
-    @description ||= "#{doc.css("strong")[0].text}" + "#{doc.css("font text").text}"
+    @description ||= doc.css("font")[4].text.gsub(/\r\n\\?/, " ").squeeze(' ')
   end
 
   def bark

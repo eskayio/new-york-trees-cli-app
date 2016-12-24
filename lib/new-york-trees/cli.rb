@@ -13,7 +13,7 @@ class NewYorkTrees::CLI
 
     puts "Would you like to learn about another tree? (Y/N)"
     answer = gets.strip
-    
+
     if answer == "Y"
       start
     end
@@ -56,6 +56,7 @@ class NewYorkTrees::CLI
     puts "---------------------Description---------------------"
     puts ""
     puts "Description:  #{NewYorkTrees::Tree.all[@array_pos].description}"
+    puts ""
   end
 
 end
