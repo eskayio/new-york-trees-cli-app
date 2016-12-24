@@ -17,7 +17,9 @@ class NewYorkTrees::CLI
   def print_trees(number_from_user)
     puts "---------------------Trees #{input} - #{input + 10}---------------------"
     puts ""
-    @array_pos = input - 1
+
+    @array_pos = number_from_user - 1
+
     puts "#{@array_pos}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
     puts "#{@array_pos + 1}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
     puts "#{@array_pos + 2}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
@@ -28,6 +30,10 @@ class NewYorkTrees::CLI
     puts "#{@array_pos + 7}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
     puts "#{@array_pos + 8}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
     puts "#{@array_pos + 9}.  #{NewYorkTrees::Tree.all[@array_pos].name} (#{NewYorkTrees::Tree.all[array_pos].scientific_name})"
+
+    puts "Enter the number of the tree you'd like to learn more about: "
+    id = gets.strip.to_int
+    print_tree(id - 1)
   end
 
   def print_tree(id)
@@ -43,7 +49,7 @@ class NewYorkTrees::CLI
     puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[@array_pos].distinguishing_features}"
 
     puts "---------------------Description---------------------"
-    puts "Description:                #{NewYorkTrees::Tree.all[@array_pos].description}"
+    puts "Description:  #{NewYorkTrees::Tree.all[@array_pos].description}"
   end
 
 end
