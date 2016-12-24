@@ -1,6 +1,6 @@
 
 class NewYorkTrees::Tree
-  attr_accessor :name, :scientific_name, :description, :bark, :twigs, :winter_buds, :leaves, :fruit, :distinguishing_features
+  attr_accessor :name, :scientific_name, :url, :description, :bark, :twigs, :winter_buds, :leaves, :fruit, :distinguishing_features
 
   @@all = []
 
@@ -21,5 +21,33 @@ class NewYorkTrees::Tree
 
   def doc
     @doc ||= Nokogiri::HTML(open(self.url))
+  end
+
+  def description
+    @description ||= doc.
+  end
+
+  def bark
+    @description ||= doc.
+  end
+
+  def twigs
+    @description ||= doc.
+  end
+
+  def winter_buds
+    @description ||= doc.
+  end
+
+  def leaves
+    @description ||= doc.
+  end
+
+  def fruit
+    @description ||= doc.
+  end
+
+  def distinguishing_features
+    @description ||= doc.
   end
 end
