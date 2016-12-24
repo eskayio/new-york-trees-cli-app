@@ -29,7 +29,7 @@ class NewYorkTrees::Tree
   end
 
   def bark
-    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()").text
+    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font").text
   end
 
   def twigs
@@ -49,6 +49,6 @@ class NewYorkTrees::Tree
   end
 
   def distinguishing_features
-    @distinguishing_features ||= "ditinguishing stuff goes here"
+    @distinguishing_features ||= "distinguishing stuff goes here"
   end
 end

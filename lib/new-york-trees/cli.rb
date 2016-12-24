@@ -13,10 +13,8 @@ class NewYorkTrees::CLI
 
     puts "Would you like to learn about another tree? (Y/N)"
     answer = gets.strip
-    if answer == "Y" || "y"
+    if answer == "Y"
       start
-    else
-      puts "Thanks for using the New York Forests Tree browser!"
     end
   end
 
