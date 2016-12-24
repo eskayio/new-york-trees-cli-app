@@ -35,13 +35,15 @@ class NewYorkTrees::CLI
     puts ""
     puts "Common Name:                #{NewYorkTrees::Tree.all[@array_pos].name}"
     puts "Scientific Name:            #{NewYorkTrees::Tree.all[@array_pos].scientific_name}"
-    puts "Description:                #{NewYorkTrees::Tree.all[@array_pos].description}"
     puts "Bark:                       #{NewYorkTrees::Tree.all[@array_pos].bark}"
     puts "Twigs:                      #{NewYorkTrees::Tree.all[@array_pos].twigs}"
     puts "Winter Buds:                #{NewYorkTrees::Tree.all[@array_pos].winter_buds}"
     puts "Leaves:                     #{NewYorkTrees::Tree.all[@array_pos].leaves}"
     puts "Fruit:                      #{NewYorkTrees::Tree.all[@array_pos].fruit}"
     puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[@array_pos].distinguishing_features}"
+
+    puts "---------------------Description---------------------"
+    puts "Description:                #{NewYorkTrees::Tree.all[@array_pos].description}"
   end
 
 end
