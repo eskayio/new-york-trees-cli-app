@@ -24,30 +24,30 @@ class NewYorkTrees::Tree
   end
 
   def description
-    @description ||= doc.
+    @description ||= "#{doc.xpath("/html/body/table[2]/tbody/tr/td[1]/font/font/strong").text} + #{doc.xpath("/html/body/table[2]/tbody/tr/td[1]/font/text()").text}"
   end
 
   def bark
-    @description ||= doc.
+    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font/text()").capitalize
   end
 
   def twigs
-    @description ||= doc.
+    @twigs ||= doc.xpath("/html/body/table[3]/tbody/tr/td/p[1]/font/text()").capitalize
   end
 
   def winter_buds
-    @description ||= doc.
+    @winter_buds ||= "winter buds go here"
   end
 
   def leaves
-    @description ||= doc.
+    @leaves ||= "leaves go here"
   end
 
   def fruit
-    @description ||= doc.
+    @fruit ||= "fruit goes here"
   end
 
   def distinguishing_features
-    @description ||= doc.
+    @distinguishing_features ||= "ditinguishing stuff goes here"
   end
 end
