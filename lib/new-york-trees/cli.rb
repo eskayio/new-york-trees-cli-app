@@ -13,6 +13,7 @@ class NewYorkTrees::CLI
 
     puts "Would you like to learn about another tree? (Y/N)"
     answer = gets.strip
+    
     if answer == "Y"
       start
     end

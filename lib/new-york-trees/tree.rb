@@ -25,11 +25,11 @@ class NewYorkTrees::Tree
   end
 
   def description
-    @description ||= "#{doc.xpath("/html/body/table[2]/tbody/tr/td[1]/font/font/strong").text} + #{doc.xpath("/html/body/table[2]/tbody/tr/td[1]/font/text()").text}"
+    @description ||= "#{doc.css("strong")[0].text}" + "#{doc.css("font text").text}"
   end
 
   def bark
-    @bark ||= doc.xpath("/html/body/table[3]/tbody/tr/td/font").text
+    @bark ||=  "test bark"
   end
 
   def twigs
