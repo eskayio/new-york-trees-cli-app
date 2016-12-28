@@ -42,20 +42,20 @@ class NewYorkTrees::CLI
   end
 
   def print_tree(id)
-    puts "--------------------- Tree Record: #{NewYorkTrees::Tree.all[@array_pos].name} ---------------------"
+    puts "--------------------- Tree Record: #{NewYorkTrees::Tree.all[id].name} ---------------------"
     puts ""
-    puts "Common Name:                #{NewYorkTrees::Tree.all[@array_pos].name}"
-    puts "Scientific Name:            #{NewYorkTrees::Tree.all[@array_pos].scientific_name}"
-    puts "Bark:                       #{NewYorkTrees::Tree.all[@array_pos].bark}"
-    puts "Twigs:                      #{NewYorkTrees::Tree.all[@array_pos].twigs}"
-    puts "Winter Buds:                #{NewYorkTrees::Tree.all[@array_pos].winter_buds}"
-    puts "Leaves:                     #{NewYorkTrees::Tree.all[@array_pos].leaves}"
-    puts "Fruit:                      #{NewYorkTrees::Tree.all[@array_pos].fruit}"
-    puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[@array_pos].distinguishing_features}"
+    puts "Common Name:                #{NewYorkTrees::Tree.all[id].name}"
+    puts "Scientific Name:            #{NewYorkTrees::Tree.all[id].scientific_name}"
+    puts "Bark:                       #{NewYorkTrees::Tree.all[id].bark}"
+    puts "Twigs:                      #{NewYorkTrees::Tree.all[id].twigs}"
+    puts "Winter Buds:                #{NewYorkTrees::Tree.all[id].winter_buds}"
+    puts "Leaves:                     #{NewYorkTrees::Tree.all[id].leaves}"
+    puts "Fruit:                      #{NewYorkTrees::Tree.all[id].fruit}"
+    puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[id].distinguishing_features}"
 
     puts "---------------------Description---------------------"
     puts ""
-    puts "Description:  #{NewYorkTrees::Tree.all[@array_pos].description}"
+    puts "Description:  #{NewYorkTrees::Tree.all[id].description}"
     puts ""
   end
 
