@@ -1,11 +1,10 @@
 
 class NewYorkTrees::Tree
-  attr_accessor :name, :scientific_name, :url, :description, :bark, :twigs, :winter_buds, :leaves, :fruit, :distinguishing_features
+  attr_accessor :name, :scientific_name, :url, :description, :bark, :twigs, :winter_buds, :leaves, :fruit, :distinguishing_features, :doc
 
   @@all = []
 
   def self.make_from_index_page(t)
-    #binding.pry
     self.new(t.css("a").text,t.css("em").text,"http://bhort.bh.cornell.edu/tree/#{t.css("a").attr("href").text}")
   end
 
@@ -25,7 +24,11 @@ class NewYorkTrees::Tree
   end
 
   def description
-    @description ||= doc.css("font")[4].text.gsub(/\r\n\\?/, " ").squeeze(' ')
+    if doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(' ') == self.scientific_name
+      @description ||= doc.css("font")[4].text.gsub(/\r\n\\?/, " ").squeeze(' ')
+    else
+      @description ||= doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(' ')
+    end
   end
 
   def bark
