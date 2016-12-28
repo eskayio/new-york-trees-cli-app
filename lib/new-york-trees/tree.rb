@@ -32,26 +32,26 @@ class NewYorkTrees::Tree
   end
 
   def bark
-    @bark ||=  "test bark"
+    @bark ||= doc.search('//text()').map(&:text)[32].gsub(/\r\n\\?/, " ").gsub("       "," ").capitalize
   end
 
   def twigs
-    @twigs ||= doc.xpath("/html/body/table[3]/tbody/tr/td/p[1]/font/text()")
+    @twigs ||= doc.search('//text()').map(&:text)[34].gsub(/\r\n\\?/, " ").gsub("       "," ")gsub(" - ","").capitalize
   end
 
   def winter_buds
-    @winter_buds ||= "winter buds go here"
+    @winter_buds ||= doc.search('//text()').map(&:text)[38].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
   end
 
   def leaves
-    @leaves ||= "leaves go here"
+    @leaves ||= doc.search('//text()').map(&:text)[41].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
   end
 
   def fruit
-    @fruit ||= "fruit goes here"
+    @fruit ||= doc.search('//text()').map(&:text)[44].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
   end
 
   def distinguishing_features
-    @distinguishing_features ||= "distinguishing stuff goes here"
+    @distinguishing_features ||= doc.search('//text()').map(&:text)[47].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
   end
 end
