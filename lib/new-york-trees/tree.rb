@@ -42,6 +42,7 @@ class NewYorkTrees::Tree
         @bark = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Bark - ","").capitalize
       end
     end
+    @bark
   end
 
   def twigs

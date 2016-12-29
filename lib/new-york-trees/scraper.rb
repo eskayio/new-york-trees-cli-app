@@ -15,7 +15,7 @@ class NewYorkTrees::Scraper
     scrape_trees_index.each do |t|
       NewYorkTrees::Tree.make_from_index_page(t)
     end
-    binding.pry
+    #binding.pry
   end
 end
 
