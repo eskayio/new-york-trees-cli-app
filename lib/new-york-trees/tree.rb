@@ -5,7 +5,7 @@ class NewYorkTrees::Tree
   @@all = []
 
   def self.make_from_index_page(t)
-    self.new(t.css("a").text,t.css("em").text,"http://bhort.bh.cornell.edu/tree/#{t.css("a").attr("href").text}")
+    self.new(t.css("a").text,t.css("em").text.gsub(")","").strip,"http://bhort.bh.cornell.edu/tree/#{t.css("a").attr("href").text}")
   end
 
   def initialize(name=nil,scientific_name=nil,url=nil)
@@ -23,11 +23,15 @@ class NewYorkTrees::Tree
     @doc ||= Nokogiri::HTML(open(self.url))
   end
 
+  @node_count = 19 #this is the baseline node count (highest is 23)
+
   def description
-    if doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(' ') == self.scientific_name
-      @description ||= doc.css("font")[4].text.gsub(/\r\n\\?/, " ").squeeze(' ')
+    if doc.css("font")[3].text.gsub(/\r\n\\?/, " ").strip.length >= 40
+      @description ||= doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(" ").strip.capitalize
+    elsif doc.css("font")[4].text.gsub(/\r\n\\?/, " ").strip.length >= 40
+      @description ||= doc.css("font")[4].text.gsub(/\r\n\\?/, " ").squeeze(" ").strip.capitalize
     else
-      @description ||= doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(' ')
+      @description ||= doc.css("font")[5].text.gsub(/\r\n\\?/, " ").squeeze(" ").strip.capitalize
     end
   end
 
@@ -36,7 +40,7 @@ class NewYorkTrees::Tree
   end
 
   def twigs
-    @twigs ||= doc.search('//text()').map(&:text)[34].gsub(/\r\n\\?/, " ").gsub("       "," ")gsub(" - ","").capitalize
+    @twigs ||= doc.search('//text()').map(&:text)[34].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
   end
 
   def winter_buds
