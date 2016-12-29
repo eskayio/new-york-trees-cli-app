@@ -35,8 +35,13 @@ class NewYorkTrees::Tree
     end
   end
 
+#is there a way to create a generic test to then know which number to put in the brackets for each tree?
   def bark
-    @bark ||= doc.search('//text()').map(&:text)[32].gsub(/\r\n\\?/, " ").gsub("       "," ").capitalize
+    self.doc.css("font").each do |node|
+      if node.text.include?("Bark - ")
+        @bark = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Bark - ","").capitalize
+      end
+    end
   end
 
   def twigs

@@ -52,10 +52,10 @@ class NewYorkTrees::CLI
     puts "Leaves:                     #{NewYorkTrees::Tree.all[id].leaves}"
     puts "Fruit:                      #{NewYorkTrees::Tree.all[id].fruit}"
     puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[id].distinguishing_features}"
-
-    puts "---------------------Description---------------------"
     puts ""
-    puts "Description:  #{NewYorkTrees::Tree.all[id].description}"
+    puts "---------------------Description---------------------"
+
+    puts "#{NewYorkTrees::Tree.all[id].description}"
     puts ""
   end
 
