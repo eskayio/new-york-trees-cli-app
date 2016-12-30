@@ -46,7 +46,12 @@ class NewYorkTrees::Tree
   end
 
   def twigs
-    @twigs ||= doc.search('//text()').map(&:text)[34].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
+    self.doc.css("font").each do |node|
+      if node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").include?("Twigs -")
+        @twigs = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Twigs - ","").capitalize
+      end
+    end
+    @twigs
   end
 
   def winter_buds
