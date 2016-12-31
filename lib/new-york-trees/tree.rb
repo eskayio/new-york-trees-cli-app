@@ -64,7 +64,12 @@ class NewYorkTrees::Tree
   end
 
   def leaves
-    @leaves ||= doc.search('//text()').map(&:text)[41].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
+    self.doc.css("font").each do |node|
+      if node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").include?("Leaves - ")
+        @leaves = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Leaves - ","").capitalize
+      end
+    end
+    @leaves
   end
 
   def fruit
