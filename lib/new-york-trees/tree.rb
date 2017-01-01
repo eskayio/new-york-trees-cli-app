@@ -74,8 +74,8 @@ class NewYorkTrees::Tree
 
   def fruit
     self.doc.css("font").each do |node|
-      if node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").include?("Fruit")
-        @leaves = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Fruit - ","").capitalize
+      if node.text.include?("Fruit -")
+        @fruit = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Fruit - ","").capitalize
       end
     end
     @fruit
