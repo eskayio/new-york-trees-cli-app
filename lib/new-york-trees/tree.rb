@@ -23,8 +23,6 @@ class NewYorkTrees::Tree
     @doc ||= Nokogiri::HTML(open(self.url))
   end
 
-  @node_count = 19 #this is the baseline node count (highest is 23)
-
   def description
     if doc.css("font")[3].text.gsub(/\r\n\\?/, " ").strip.length >= 40
       @description ||= doc.css("font")[3].text.gsub(/\r\n\\?/, " ").squeeze(" ").strip.capitalize
