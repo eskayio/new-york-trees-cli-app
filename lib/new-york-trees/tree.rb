@@ -73,7 +73,12 @@ class NewYorkTrees::Tree
   end
 
   def fruit
-    @fruit ||= doc.search('//text()').map(&:text)[44].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
+    self.doc.css("font").each do |node|
+      if node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").include?("Fruit")
+        @leaves = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Fruit - ","").capitalize
+      end
+    end
+    @fruit
   end
 
   def distinguishing_features
