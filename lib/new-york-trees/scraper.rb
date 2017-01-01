@@ -1,6 +1,3 @@
-#require 'nokogiri'
-#require 'pry'
-#require 'open-uri'
 
 class NewYorkTrees::Scraper
   def get_page
@@ -15,8 +12,5 @@ class NewYorkTrees::Scraper
     scrape_trees_index.each do |t|
       NewYorkTrees::Tree.make_from_index_page(t)
     end
-    #binding.pry
   end
 end
-
-#Scraper.new.scrape_trees_index
