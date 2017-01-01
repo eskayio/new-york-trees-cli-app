@@ -41,18 +41,33 @@ class NewYorkTrees::CLI
     print_tree(id - 1)
   end
 
-  #needs proper formatting and wrapping of values.
+  #needs proper formatting and wrapping of values; needs capitalization of secondary sentences.
   def print_tree(id)
     puts "--------------------- Tree Record: #{NewYorkTrees::Tree.all[id].name} ---------------------"
     puts ""
-    puts "Common Name:                #{NewYorkTrees::Tree.all[id].name.ljust(25)}"
-    puts "Scientific Name:            #{NewYorkTrees::Tree.all[id].scientific_name.ljust(25)}"
-    puts "Bark:                       #{NewYorkTrees::Tree.all[id].bark.ljust(25)}"
-    puts "Twigs:                      #{NewYorkTrees::Tree.all[id].twigs.ljust(25)}"
-    puts "Winter Buds:                #{NewYorkTrees::Tree.all[id].winter_buds.ljust(25)}"
-    puts "Leaves:                     #{NewYorkTrees::Tree.all[id].leaves.ljust(25)}"
-    puts "Fruit:                      #{NewYorkTrees::Tree.all[id].fruit.ljust(25)}"
-    puts "Distinguishing Features:    #{NewYorkTrees::Tree.all[id].distinguishing_features.ljust(25)}"
+    puts "Common Name:"
+    puts "#{NewYorkTrees::Tree.all[id].name.ljust(25)}"
+    puts ""
+    puts "Scientific Name:"
+    puts "#{NewYorkTrees::Tree.all[id].scientific_name.ljust(25)}"
+    puts ""
+    puts "Bark:"
+    puts "#{NewYorkTrees::Tree.all[id].bark.ljust(25)}"
+    puts ""
+    puts "Twigs:"
+    puts "#{NewYorkTrees::Tree.all[id].twigs.ljust(25)}"
+    puts ""
+    puts "Winter Buds:"
+    puts "#{NewYorkTrees::Tree.all[id].winter_buds.ljust(25)}"
+    puts ""
+    puts "Leaves:"
+    puts "#{NewYorkTrees::Tree.all[id].leaves.ljust(25)}"
+    puts ""
+    puts "Fruit:"
+    puts "#{NewYorkTrees::Tree.all[id].fruit.ljust(25)}"
+    puts ""
+    puts "Distinguishing Features:"
+    puts "#{NewYorkTrees::Tree.all[id].distinguishing_features.ljust(25)}"
     puts ""
     puts "---------------------Description---------------------"
 
