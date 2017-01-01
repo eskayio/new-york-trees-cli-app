@@ -82,6 +82,12 @@ class NewYorkTrees::Tree
   end
 
   def distinguishing_features
-    @distinguishing_features ||= doc.search('//text()').map(&:text)[47].gsub(/\r\n\\?/, " ").gsub("       "," ").gsub(" - ","").capitalize
+    self.doc.css("font").each do |node|
+      if node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").include?("Distinguishing features - ")
+        @distinguishing_features = node.text.gsub(/\r\n\\?/, " ").gsub("       "," ").gsub("Distinguishing features - ","").capitalize
+      end
+    end
+    @distinguishing_features
   end
+
 end
